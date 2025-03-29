@@ -695,7 +695,7 @@ void LIVMapper::standard_pcl_cbk(const sensor_msgs::PointCloud2::ConstPtr &msg)
     ROS_ERROR("lidar loop back, clear buffer");
     lid_raw_data_buffer.clear();
   }
-  // ROS_INFO("get point cloud at time: %.6f", msg->header.stamp.toSec());
+  ROS_INFO("get point cloud at time: %.6f", msg->header.stamp.toSec());
   PointCloudXYZI::Ptr ptr(new PointCloudXYZI());
   p_pre->process(msg, ptr);
   lid_raw_data_buffer.push_back(ptr);
